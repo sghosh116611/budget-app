@@ -1,6 +1,9 @@
 {
-    "name": "expensify",
+    "name": "budget-app",
     "version": "1.0.0",
+    "engines": {
+        "node": "8.10.x"
+    },
     "main": "index.js",
     "author": "Soumojit Ghosh",
     "license": "MIT",
