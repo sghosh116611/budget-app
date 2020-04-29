@@ -12,6 +12,8 @@ import './styles/styles.scss';
 
 const store = storeConfgure();
 
+console.log("testing");
+
 const jsx = ( <
     Provider store = { store } >
     <
