@@ -11,7 +11,7 @@ export default class ExpenseForm extends React.Component {
 
             this.state = {
                 description: props.expense ? props.expense.description : '',
-                notes: props.expense ? props.expense.note : '',
+                note: props.expense ? props.expense.note : '',
                 amount: props.expense ? props.expense.amount : '',
                 createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
                 calendarFocused: false,
@@ -25,8 +25,8 @@ export default class ExpenseForm extends React.Component {
         };
 
         onNotesChange = (e) => {
-            const notes = e.target.value;
-            this.setState(() => ({ notes }));
+            const note = e.target.value;
+            this.setState(() => ({ note }));
         };
 
         onAmountChange = (e) => {
@@ -53,7 +53,7 @@ export default class ExpenseForm extends React.Component {
                 this.setState(() => ({ error: "" }));
                 this.props.onSubmit({
                     description: this.state.description,
-                    notes: this.state.notes,
+                    note: this.state.note,
                     amount: this.state.amount,
                     createdAt: this.state.createdAt.valueOf()
                 });
