@@ -10,9 +10,7 @@ const Header = () => ( <
     activeClassName = "is-active"
     exact > HOME < /NavLink> <
     NavLink to = "/create"
-    activeClassName = "is-active" > CREATE ITEMS < /NavLink> <
-    NavLink to = "/help"
-    activeClassName = "is-active" > HELP < /NavLink> < /
+    activeClassName = "is-active" > CREATE ITEMS < /NavLink> < /
     header >
 );
 

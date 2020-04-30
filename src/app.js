@@ -7,8 +7,10 @@ import storeConfgure from "./store/storeConfigure";
 // import { addExpense, editExpense, removeExpense } from "./actions/expensesAction";
 // import { setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from "./actions/filtersAction";
 // import getVisibleExpenses from "./selectors/getVisibleExpenses";
+import { startViewExpense } from "./actions/expensesAction";
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import "./firebase/firebase";
 
 const store = storeConfgure();
 
@@ -22,4 +24,8 @@ const jsx = ( <
     /Provider>
 );
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render( < p > Loading < /p>,document.getElementById("app"));
+
+        store.dispatch(startViewExpense()).then(() => {
+            ReactDOM.render(jsx, document.getElementById('app'));
+        });

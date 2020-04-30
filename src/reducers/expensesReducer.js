@@ -9,6 +9,8 @@ export default (state = expensesDefaultState, action) => {
             ]
         case "REMOVE_EXPENSE":
             return state.filter(({ id }) => action.id !== id);
+        case "VIEW_EXPENSE":
+            return action.expense
         case 'EDIT_EXPENSE':
             return state.map((expense) => {
                 if (expense.id === action.id) {
