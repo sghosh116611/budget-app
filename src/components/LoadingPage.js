@@ -4,7 +4,7 @@ const LoadingPage = () => ( <
     div className = "loader" >
     <
     img className = "loader__image"
-    src = "/images/loader" / >
+    src = "/images/loader.gif" / >
     <
     /div>
 );
