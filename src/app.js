@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import AppRouter, { history } from "./AppRouter/Router";
 import storeConfgure from "./store/storeConfigure";
 import { login, logout } from "./actions/loginAction";
+import LoadingPage from "./components/LoadingPage";
 // import { addExpense, editExpense, removeExpense, startViewExpense } from "./actions/expensesAction";
 // import { setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from "./actions/filtersAction";
 // import getVisibleExpenses from "./selectors/getVisibleExpenses";
@@ -30,24 +31,24 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render( < p > Loading < /p>,document.getElementById("app"));
+ReactDOM.render( < LoadingPage / > , document.getElementById("app"));
 
 
 
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                console.log(user.uid);
-                store.dispatch(login(user.uid));
-                store.dispatch(startViewExpense()).then(() => {
-                    renderApp();
-                    if (history.location.pathname === "/") {
-                        history.push("/dashboard");
-                    }
-                });
+// firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//         console.log(user.uid);
+//         store.dispatch(login(user.uid));
+//         store.dispatch(startViewExpense()).then(() => {
+//             renderApp();
+//             if (history.location.pathname === "/") {
+//                 history.push("/dashboard");
+//             }
+//         });
 
-            } else {
-                store.dispatch(logout());
-                renderApp();
-                history.push("/");
-            }
-        });
+//     } else {
+//         store.dispatch(logout());
+//         renderApp();
+//         history.push("/");
+//     }
+// });

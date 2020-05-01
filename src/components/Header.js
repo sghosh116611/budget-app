@@ -1,21 +1,26 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import { startLogout } from "../actions/loginAction";
 import { connect } from "react-redux";
 
 const Header = ({ startLogout }) => ( <
-    header >
+    header className = "header" >
     <
-    h1 > Budget App < /h1> <
-    NavLink to = "/"
-    activeClassName = "is-active"
-    exact > HOME < /NavLink> <
-    NavLink to = "/create"
-    activeClassName = "is-active" > CREATE ITEMS < /NavLink>  <
-    button onClick = { startLogout } > Logout < /button> < /
+    div className = "content-container" >
+    <
+    div className = "header__content" >
+    <
+    Link className = "header__title"
+    to = "/dashboard" >
+    <
+    h1 > Budget App < /h1> < /
+    Link > <
+    button onClick = { startLogout }
+    className = "button button--link" > Logout < /button> < /
+    div > <
+    /div> < /
     header >
 );
-
 const mapDispatchToProp = (dispatch) => ({
     startLogout: () => dispatch(startLogout())
 });
